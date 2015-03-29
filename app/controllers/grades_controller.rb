@@ -3,7 +3,7 @@ class GradesController < ApplicationController
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
   
   def index
-    @grades = Grade.all
+    @grades = policy_scope(Grade)
   end
 
   def show
