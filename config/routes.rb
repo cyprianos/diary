@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # get 'front/index'
 
+  get 'userboard', to: 'userboard#index'
   devise_for :users
   root to: 'front#index'
   resources :subjects
@@ -9,4 +10,5 @@ Rails.application.routes.draw do
   get '/my_grades', to: 'grades#user_grades'
   resources :users
   resources :divisions
+
 end

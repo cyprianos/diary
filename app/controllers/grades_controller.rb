@@ -3,7 +3,7 @@ class GradesController < ApplicationController
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
   
   def index
-    @grades = Grade.all
+    @grades = GradePolicy::Scope.new(current_user, Grade).resolve
   end
 
   def show
