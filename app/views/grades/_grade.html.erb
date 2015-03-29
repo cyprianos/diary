@@ -1,0 +1,10 @@
+<tr id="grade_<%= grade.id %>">
+  <td><%= grade.id %></td>
+  <td><%= grade.value %></td>
+  <td><%= l(grade.updated_at, format: :long) %></td>
+  <td><%= l(grade.created_at, format: :long) %></td>
+  <td>
+    <%= link_to 'Change', edit_grade_path(grade), remote: true, :class => 'btn btn-sm btn-info' %>
+    <%= link_to 'Delete', grade, remote: true, :method => :delete, data: {confirm: "Remove Grade: #{grade.value}"}, :class => 'btn btn-sm btn-danger' %>
+  </td>
+</tr>
