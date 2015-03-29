@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329092948) do
+ActiveRecord::Schema.define(version: 20150329095257) do
+
+  create_table "division_subjects", force: :cascade do |t|
+    t.integer  "division_id"
+    t.integer  "subject_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "division_subjects", ["division_id"], name: "index_division_subjects_on_division_id"
+  add_index "division_subjects", ["subject_id"], name: "index_division_subjects_on_subject_id"
 
   create_table "divisions", force: :cascade do |t|
     t.string   "name"
@@ -21,6 +31,17 @@ ActiveRecord::Schema.define(version: 20150329092948) do
 
   create_table "grades", force: :cascade do |t|
     t.integer  "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "subject_id"
+  end
+
+  add_index "grades", ["subject_id"], name: "index_grades_on_subject_id"
+  add_index "grades", ["user_id"], name: "index_grades_on_user_id"
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,9 +66,11 @@ ActiveRecord::Schema.define(version: 20150329092948) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "role_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["role_id"], name: "index_users_on_role_id"
 
 end
