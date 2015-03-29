@@ -60,7 +60,7 @@ private
   end
   
   def user_params
-    params.require(:user).permit(:name, :role_id)
+    params.require(:user).permit(:email, :role_id)
   end
 
 end
