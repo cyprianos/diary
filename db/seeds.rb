@@ -6,3 +6,11 @@ Subject.create!([
 ])
  
 p "Created #{Subject.count} subjects."
+
+Role.destroy_all
+Role.create!([
+  {name: 'Teacher'},
+  {name: 'Student'}
+])
+
+p "Created #{Role.count} roles."
