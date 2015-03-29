@@ -1,0 +1,9 @@
+<tr>
+  <td>
+    <%= @division.pluck(:name).join(', ') if current_user.division %>
+  </td>
+  <td></td>
+  <td>
+    <%= @grades.pluck(:value).join(', ') if current_user.grades %>
+  </td>
+</tr>

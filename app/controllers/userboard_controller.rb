@@ -1,7 +1,7 @@
 class UserboardController < ApplicationController
   def index
-    me = User.find(current_user)
-    @divs = me.division ? me.division.subjects : []
-
+    @division = Division.where(user: current_user)
+    @teacher = User.where(user: current_user)
+    @grades = Grade.where(user: current_user)
   end
 end
