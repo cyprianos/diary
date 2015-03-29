@@ -1,0 +1,24 @@
+<div class="container">
+
+  <h2>Divisions</h2>
+  <div class="well">
+    <%= link_to "New Division", new_division_path, remote: true, class: "btn btn-primary" %>
+  </div>
+  <div class="new-user"></div>
+
+  <table id class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>ID#</th>
+      <th>Name</th>
+      <th>Updated at</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody id="divisions">
+    <%= render @divisions %>
+    </tbody>
+  </table>
+  
+</div>

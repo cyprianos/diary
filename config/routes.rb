@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :subjects
   resources :grades
   resources :users
+  resources :divisions
 end

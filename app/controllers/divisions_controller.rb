@@ -1,27 +1,27 @@
-class UsersController < ApplicationController
+class DivisionsController < ApplicationController
 
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_division, only: [:show, :edit, :update, :destroy]
   
   def index
-    @users = User.all
+    @divisions = Division.all
   end
 
   def show
   end
 
   def new
-    @user = User.new
+    @division = Division.new
   end
 
   def create
-    @user = User.create(user_params)
+    @division = Division.create(division_params)
 
     respond_to do |format|
-      if @user.save
+      if @division.save
         format.json { head :no_content }
         format.js
       else
-        format.json { render json: @user.errors.full_messages, 
+        format.json { render json: @division.errors.full_messages, 
                              status: :unprocessable_entity }
       end
       
@@ -33,11 +33,11 @@ class UsersController < ApplicationController
 
   def update
      respond_to do |format|
-      if @user.update(user_params)
+      if @division.update(division_params)
         format.json { head :no_content }
         format.js
       else
-        format.json { render json: @user.errors.full_messages,
+        format.json { render json: @division.errors.full_messages,
                                    status: :unprocessable_entity }
       end
      
@@ -45,22 +45,22 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
+    @division.destroy
     respond_to do |format|
       format.js
-      format.html { redirect_to users_url }
+      format.html { redirect_to divisions_url }
       format.json { head :no_content }
     end
   end
 
 private
   
-  def set_user
-    @user = User.find(params[:id])
+  def set_division
+    @division = Division.find(params[:id])
   end
   
-  def user_params
-    params.require(:user).permit(:email, :role_id)
+  def division_params
+    params.require(:division).permit(:name)
   end
 
 end
