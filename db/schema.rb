@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329095257) do
+ActiveRecord::Schema.define(version: 20150329130855) do
 
   create_table "division_subjects", force: :cascade do |t|
     t.integer  "division_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150329095257) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "subject_id"
+    t.integer  "teacher_id"
   end
 
   add_index "grades", ["subject_id"], name: "index_grades_on_subject_id"

@@ -60,6 +60,9 @@ private
   end
   
   def user_params
+    if params[:role_id]
+      params[:user][:role_id]=params[:role_id]
+    end
     params.require(:user).permit(:email, :role_id)
   end
 

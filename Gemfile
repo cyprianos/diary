@@ -1,4 +1,4 @@
-\source 'https://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'devise'
 gem 'rails', '4.2.0'

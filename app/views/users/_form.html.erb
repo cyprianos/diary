@@ -3,17 +3,24 @@
 </div>
 
 <div class="row">
- <div class="col-sm-6">
-  <div class="form-group">
-    <%= f.label :email, :class => "control-label" %>
-    <%= f.text_field :email, :class => "form-control first_input"  %>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= f.label :email, :class => "control-label" %>
+      <%= f.text_field :email, :class => "form-control first_input"  %>
+  	</div>
   </div>
-</div>
 
-<div class="col-sm-6">
-  <div class="form-group">
-    <%= f.submit  @user.new_record? ? "Create" : "Update", :class => "btn btn-primary" %>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= select_tag(:role_id, options_for_select([['Student', 2],['Teacher', 1]])) %>
+    </div>
   </div>
-</div>
+
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= f.submit  @user.new_record? ? "Create" : "Update", :class => "btn btn-primary" %>
+    </div>
+  </div>
+
 </div>
 <% end %>

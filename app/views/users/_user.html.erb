@@ -1,6 +1,7 @@
 <tr id="user_<%= user.id %>">
   <td><%= user.id %></td>
   <td><%= user.email %></td>
+  <td><%= user.role.name %></td>
   <td><%= l(user.updated_at, format: :long) %></td>
   <td><%= l(user.created_at, format: :long) %></td>
   <td>
