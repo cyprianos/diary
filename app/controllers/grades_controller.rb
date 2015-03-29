@@ -53,6 +53,16 @@ class GradesController < ApplicationController
     end
   end
 
+  def teacher_grades
+    @grades = Grade.joins(:subjects).where("subjects.user_id" => current_user.id)
+    render 'index'
+  end
+
+  def user_grades
+    @grades = Grade.where(user: current_user)
+    render 'index'
+  end
+
 private
   
   def set_grade
