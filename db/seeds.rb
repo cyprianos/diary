@@ -24,3 +24,11 @@ User.create!([
 ])
 
 p "Created #{User.count} users."
+
+Division.destroy_all
+Division.create!([
+  {id: 1, name: 'Ia'},
+  {id: 2, name: 'IIb'}
+])
+
+p "Created #{Division.count} divisions."
