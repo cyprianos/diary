@@ -9,12 +9,21 @@
       <%= f.text_field :email, :class => "form-control first_input"  %>
   	</div>
   </div>
+</div>
 
+<div class="row">
   <div class="col-sm-6">
     <div class="form-group">
       <%= select_tag(:role_id, options_for_select([['Student', 2],['Teacher', 1]])) %>
     </div>
   </div>
+
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= collection_select(nil, :division_id, Division.all, :id, :name) %>
+    </div>
+  </div>
+
 
   <div class="col-sm-6">
     <div class="form-group">

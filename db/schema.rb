@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329130855) do
+ActiveRecord::Schema.define(version: 20150329135619) do
 
   create_table "division_subjects", force: :cascade do |t|
     t.integer  "division_id"
@@ -68,8 +68,10 @@ ActiveRecord::Schema.define(version: 20150329130855) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "role_id"
+    t.integer  "division_id"
   end
 
+  add_index "users", ["division_id"], name: "index_users_on_division_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["role_id"], name: "index_users_on_role_id"

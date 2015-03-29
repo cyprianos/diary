@@ -63,7 +63,10 @@ private
     if params[:role_id]
       params[:user][:role_id]=params[:role_id]
     end
-    params.require(:user).permit(:email, :role_id)
+    if params[:division_id]
+      params[:user][:division_id]=params[:division_id]
+    end
+    params.require(:user).permit(:email, :role_id, :division_id)
   end
 
 end
