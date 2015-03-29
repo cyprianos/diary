@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+\source 'https://rubygems.org'
 
 gem 'devise'
 gem 'rails', '4.2.0'
@@ -15,7 +15,6 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'pry-rails', :group => :development
 gem 'pundit'
 gem 'devise-bootstrap-views'
-
 
 group :development, :test do
   gem 'byebug'
