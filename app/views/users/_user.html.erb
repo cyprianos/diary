@@ -1,0 +1,10 @@
+<tr id="user_<%= user.id %>">
+  <td><%= user.id %></td>
+  <td><%= user.email %></td>
+  <td><%= l(user.updated_at, format: :long) %></td>
+  <td><%= l(user.created_at, format: :long) %></td>
+  <td>
+    <%= link_to 'Change', edit_user_path(user), remote: true, :class => 'btn btn-sm btn-info' %>
+    <%= link_to 'Delete', user, remote: true, :method => :delete, data: {confirm: "Remove user: #{user.email}"}, :class => 'btn btn-sm btn-danger' %>
+  </td>
+</tr>
